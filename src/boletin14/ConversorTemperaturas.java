@@ -7,7 +7,7 @@ import java.util.Scanner;
  * @author irodriguezsteuerberg
  */
 public class ConversorTemperaturas {
-private final int TEMPMIN = 80;
+private final int TEMPMAX = 80;
 private float gradosC;
 
 public float getGradosC() {
@@ -21,16 +21,16 @@ gradosC= sc.nextFloat();
 }
 
 public float centigradosAFahrenheit() throws TemperaturaErradaExcepcion {
-if (gradosC<TEMPMIN){
-throw new TemperaturaErradaExcepcion("Non pode traballar con temperaturas menores a "+TEMPMIN+"ºC");    
+if (gradosC>TEMPMAX){
+throw new TemperaturaErradaExcepcion("Non pode traballar con temperaturas maiores a "+TEMPMAX+"ºC");    
 }
 float gradosF = 9.0f / 5.0f * gradosC + 32.4f;
 return gradosF;   
 }
 
 public void centigradosAReaumur() throws TemperaturaErradaExcepcion{
-if (gradosC<TEMPMIN){
-throw new TemperaturaErradaExcepcion("Non pode traballar con temperaturas menores a "+TEMPMIN+"ºC");
+if (gradosC>TEMPMAX){
+throw new TemperaturaErradaExcepcion("Non pode traballar con temperaturas maiores a "+TEMPMAX+"ºC");
 }
 float gradosR=gradosC * 4.0f/5.0f;
 System.out.println(gradosC+"ºC son "+gradosR+"º Reaumur");
